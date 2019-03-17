@@ -8,7 +8,10 @@ from odoo.addons.web.controllers.main import Database
 from odoo.addons.web.controllers import main
 from odoo.addons.web.controllers.main import Binary
 from odoo.modules import get_resource_path
-from cStringIO import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 from odoo.http import request
 
 if hasattr(sys, 'frozen'):
